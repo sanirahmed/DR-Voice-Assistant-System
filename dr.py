@@ -243,6 +243,9 @@ while True:
             webbrowser.open(f"https://www.youtube.com/results?search_query={search_query}+full+movie")
             speak(f"Playing {search_query} on YouTube.")
             logging.info(f"User asked to play a movie: {search_query}")
+    elif "open file explorer" in query:
+        subprocess.Popen("explorer.exe")
+        logging.info("User asked to open File Explorer.")
 
     elif "thanks" in query or "thank you" in query:
         speak("You're welcome! If you need any further assistance, feel free to ask.")
@@ -259,6 +262,7 @@ while True:
         speak("Goodbye! Have a great day!")
         logging.info("User asked to exit the application.")
         break     
+    
 
     else:
         speak("Sorry, I didn't understand that. Could you please repeat?")
